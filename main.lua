@@ -1,4 +1,5 @@
 cam = require("lib/gamera")
+bump = require("lib/bump")
 require("cam")
 require("level")
 require("jour")
@@ -27,3 +28,17 @@ require("batiments/base/transporteur")
 require("batiments/armes/arbalette")
 require("batiments/armes/canon")
 require("batiments/armes/poteau")
+function love.load()
+  world = bump.newWorld()
+  worldLoad()
+end
+function love.update(dt)
+end
+function love.draw()
+  worldDraw()
+end
+function love.keypressed(key)
+  if key == "escape" then
+    love.event.quit()
+  end
+end
